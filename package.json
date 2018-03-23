@@ -1,0 +1,32 @@
+{
+  "name": "assign-map",
+  "version": "1.0.0",
+  "description": "Like Object.assign, but let you alter/delete some keys using functions",
+  "main": "dist/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "test": "npm run build && ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/futurist/assign-map.git"
+  },
+  "keywords": [
+    "object",
+    "assign",
+    "map"
+  ],
+  "author": "James Yang",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/futurist/assign-map/issues"
+  },
+  "homepage": "https://github.com/futurist/assign-map#readme",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "rollup": "^0.57.1"
+  }
+}
