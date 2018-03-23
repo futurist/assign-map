@@ -1,7 +1,7 @@
 import test from 'ava'
 import lib from '../dist'
 
-test('', t=>{
+test('normal', t=>{
   const ret = lib(
     {a:1,b:2},
     {
@@ -17,5 +17,14 @@ test('', t=>{
     d: 1234
   }
   t.deepEqual(ret, expect)
+})
+
+test('normal', t=>{
+  t.deepEqual(
+    lib({a:1,b:2}, {a:null, b:v=>v*2}),
+    {
+      b: 4
+    }
+  )
 })
 

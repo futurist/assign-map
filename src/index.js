@@ -12,12 +12,17 @@ function assignMap(obj, fnObj={}){
   const keyArr = keys(obj)
   const fnArr = keys(fnObj)
   for(let i=0;i<keyArr.length;i++){
-    let k = keyArr[i]
+    const k = keyArr[i]
     if(fnArr.indexOf(k)<0) ret[k] = obj[k]
   }
   for(let i=0;i<fnArr.length;i++){
-    let k = fnArr[i]
-    valArr.push(fnObj[k](obj[k], k, obj))
+    const k = fnArr[i]
+    const fn = fnObj[k]
+    if(typeof fn==='function') {
+      let val = fn(obj[k], k, obj)
+      if(typeof val!=='object'||val===null) val = {[k]: val}
+      valArr.push(val)
+    }
   }
   return assign.apply(null, valArr)
 }

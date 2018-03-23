@@ -12,6 +12,15 @@ npm install --save assign-map
 
 ## Usage
 
+### Simple One
+
+```js
+assignMap({a:1, b:2}, {b: v=>v*2})
+// {a:1, b:4}
+```
+
+### Complex One
+
 ```js
 import assignMap from 'assign-map'
 
@@ -36,4 +45,3 @@ const expect = {
 }
 t.deepEqual(newObject, expect)
 ```
-
