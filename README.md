@@ -1,13 +1,13 @@
-# assign-map
-Like Object.assign, but let you alter/delete some keys using functions
+# map-value
+Map object key/value into new object, but let you alter/delete some keys using functions
 
-[![npm](https://img.shields.io/npm/v/assign-map.svg "Version")](https://www.npmjs.com/package/assign-map)
-[![Build Status](https://travis-ci.org/futurist/assign-map.svg?branch=master)](https://travis-ci.org/futurist/assign-map)
+[![npm](https://img.shields.io/npm/v/map-value.svg "Version")](https://www.npmjs.com/package/map-value)
+[![Build Status](https://travis-ci.org/futurist/map-value.svg?branch=master)](https://travis-ci.org/futurist/map-value)
 
 ## Install
 
 ```sh
-npm install --save assign-map
+npm install --save map-value
 ```
 
 ## Usage
@@ -15,16 +15,14 @@ npm install --save assign-map
 ### Simple One
 
 ```js
-assignMap({a:1, b:2}, {b: v=>v*2})
+mapValue({a:1, b:2}, {b: v=>v*2})
 // {a:1, b:4}
 ```
 
 ### Complex One
 
 ```js
-import assignMap from 'assign-map'
-
-const newObject = assignMap(
+const newObject = mapValue(
     {a:1,b:2},
     {
       a: value => ({c:3}),
@@ -36,12 +34,11 @@ const newObject = assignMap(
 Result:
 
 ```js
-const expect = {
+{
   b: 2,
   c: 3,
   x: undefined,
   k: 'x',
   d: 1234
 }
-t.deepEqual(newObject, expect)
 ```

@@ -1,11 +1,12 @@
 'use strict';
 
 /**
- * Like Object.assign, but let you alter some keys
+ * Map object key/value into new object
+ * but let you alter/delete some keys using functions
  * @param {Object} obj source object
  * @param {Object|any} fnObj {key:function} with (key, value, obj)=>newValue
  */
-function assignMap(obj, fnObj={}){
+function mapValue(obj, fnObj={}){
   if(!obj) return obj
   const {keys, assign} = Object;
   const ret = {};
@@ -28,4 +29,4 @@ function assignMap(obj, fnObj={}){
   return assign.apply(null, valArr)
 }
 
-module.exports = assignMap;
+module.exports = mapValue;
